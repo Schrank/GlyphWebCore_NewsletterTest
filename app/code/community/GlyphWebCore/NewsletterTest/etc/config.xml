@@ -26,13 +26,14 @@
     
     <admin>
 	    <routers>
-            <newslettertest>
-                <use>admin</use>
+            <adminhtml>
                 <args>
-                    <module>GlyphWebCore_NewsletterTest</module>
-                    <frontName>newslettertest</frontName>
+                    <modules>
+                        <glyphwebcore_newslettertest
+                                after="Mage_Adminhtml">GlyphWebCore_NewsletterTest</glyphwebcore_newslettertest>
+                    </modules>
                 </args>
-            </newslettertest>          
+            </adminhtml>
         </routers>
     </admin>
     
@@ -42,7 +43,7 @@
                 <children>
                     <newslettertest_sendtest translate="title" module="newslettertest">
                         <title>Send Test Newsletter</title>
-                        <action>newslettertest/adminhtml_sendtest</action>
+                        <action>adminhtml/adminhtml_sendtest</action>
                     </newslettertest_sendtest>
                 </children>
             </newsletter>
@@ -53,9 +54,9 @@
                     <children>
                         <newsletter>
                             <children>
-                                <newslettertest_sendtest>
+                                <adminhtml_sendtest>
                                     <title>Send Test Newsletter</title>
-                                </newslettertest_sendtest>
+                                </adminhtml_sendtest>
                             </children>
                         </newsletter>
                     </children>
