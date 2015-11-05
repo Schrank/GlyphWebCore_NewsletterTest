@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>GlyphWebCore_NewsletterTest</name>
+    <version>1.2.0</version>
+    <stability>stable</stability>
+    <license>Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Send a Test Newsletter to an email to check how the customers will receive your Newsletter.</summary>
+    <description>Ever wanted to know how your Newsletter looks like before sending it to your customers? Yes, Magento provides you a preview of the Newsletter, but, sometimes, the format of the Newsletter received to an email client can be different than what you see in the Magento Newsletter preview.&#xD;
+&#xD;
+Now, you can send a copy of the Newsletter as a test to any email and check how it will look for your customers in their email.</description>
+    <notes>The Name and the Email that is added as "Store Email Addresses" are loaded as default values in the Newsletter Test Page. You can change the Name and the Email to which the Newsletter test email will be sent on the Newsletter Test Page.</notes>
+    <authors><author><name>Harish Kumar B P</name><user>magedevelopment</user><email>harishbp@magedevelopment.com</email></author></authors>
+    <date>2013-11-18</date>
+    <time>08:24:16</time>
+    <contents><target name="magecommunity"><dir name="GlyphWebCore"><dir name="NewsletterTest"><dir name="Helper"><file name="Data.php" hash="6b3b2bcdeb4faf7bed8873c7ea1f0d70"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="SendtestController.php" hash="f5c472ae2895b2cc1b28e5a09cb7ce4d"/></dir></dir><dir name="etc"><file name="config.xml" hash="5651e9fbdd8ef0ebc793fe3a87fb3111"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="GlyphWebCore_NewsletterTest.xml" hash="ba5b6f9a14dfeb87f8736792a27d98e8"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="glyphwebcore"><file name="adminhtml.xml" hash="47de848e1847d7c3ab855bcb7cdf4088"/></dir></dir><dir name="template"><dir name="glyphwebcore"><dir name="adminhtml"><file name="sendtest.phtml" hash="11f13b1aff6bc19bf86530fa383c15b6"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>5.5.0</max></php></required></dependencies>
+</package>

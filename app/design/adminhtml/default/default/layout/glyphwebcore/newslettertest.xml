@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout>
+    <newslettertest_adminhtml_sendtest_index>
+        <update handle="newslettertest_sendtest_index"/>
+        <reference name="content">
+            <block type="adminhtml/template" name="sendtest" template="glyphwebcore/newslettertest/sendtest.phtml"/>
+        </reference>
+    </newslettertest_adminhtml_sendtest_index>
+</layout>

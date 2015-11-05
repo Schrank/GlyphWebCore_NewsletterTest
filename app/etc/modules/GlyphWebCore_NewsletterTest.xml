@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <GlyphWebCore_NewsletterTest>
+            <active>true</active>
+            <codePool>community</codePool>
+        </GlyphWebCore_NewsletterTest>
+    </modules>
+</config>

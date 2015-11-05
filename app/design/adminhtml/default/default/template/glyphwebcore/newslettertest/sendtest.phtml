@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @creator - Harish Kumar B P from GlyphWebCore Technologies
+ * @website - http://www.magedevelopment.com
+ * @module  - GlyphWebCore NewsletterTest
+ *
+**/
+
+?>
+
+<div class="content-header">
+    <table cellspacing="0" class="grid-header">
+        <tr>
+            <td><h3><?=$this->__('Newsletter Test')?></h3></td>
+            <td class="a-right">
+                
+            </td>
+        </tr>
+    </table>
+</div>
+
+<?php
+
+$prefix = "";
+$myoptions = "";
+
+$prefix = Mage::getConfig()->getTablePrefix();
+
+$sql = "SELECT * FROM ".$prefix."newsletter_queue WHERE queue_status = 0";
+$connection = Mage::getSingleton('core/resource')->getConnection('core_read');
+foreach ($connection->fetchAll($sql) as $arr_row) 
+{
+ 	$myoptions = $myoptions."<option value='".$arr_row['queue_id']."'>".$arr_row['newsletter_subject']."</option>\n";
+}
+
+?>
+
+<div class="entry-edit">
+
+<?php if($myoptions) : ?>
+
+    <form id="edit_form" name="edit_form" method="post" action="<?=$this->getUrl('*/*/post')?>">
+	    <input name="form_add" type="hidden" value="getnow" />
+        <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+        <h4 class="icon-head head-edit-form fieldset-legend"><?=$this->__('Send Newsletter Test Email')?></h4>
+        <fieldset id="my-fieldset">
+            <table cellspacing="0" class="form-list">
+            	<tr>
+                    <td class="label"><?=$this->__('Your Name')?> <span class="required">*</span></td>
+                    <td class="input-ele"><input type="text" class="input-text required-entry" name="name" value="<?php echo Mage::getStoreConfig('trans_email/ident_general/name');?>" style="width:220px;"/><br>
+                    </td>
+                </tr>            
+            	<tr>
+                    <td class="label"><?=$this->__('Your Email')?> <span class="required">*</span></td>
+                    <td class="input-ele"><input type="text" class="input-text required-entry" name="email" value="<?php echo Mage::getStoreConfig('trans_email/ident_general/email');?>" style="width:220px;"/><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"><?=$this->__('Choose Newsletter Queue')?> <span class="required">*</span></td>
+                    <td class="input-ele">
+                    	<select name="id" id="id" style="width:220px;" class="required-select">
+							<?php echo $myoptions;?>
+                    	</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td class="input-ele"><br><button onclick="editForm.submit()" class="scalable save" type="button"><span>Submit</span></button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+<?php else: ?>
+    
+    <center><font size="3">No Active Newsletter Queues found!</font></center>
+    
+<?php endif; ?>
+    
+</div>
+
+<script type="text/javascript">
+    var editForm = new varienForm('edit_form');
+</script>
+

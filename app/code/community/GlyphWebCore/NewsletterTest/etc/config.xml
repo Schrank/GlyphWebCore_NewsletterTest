@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <GlyphWebCore_NewsletterTest>
+            <version>1.2.0</version>
+        </GlyphWebCore_NewsletterTest>
+    </modules> 
+     
+    <global>
+        <helpers>
+            <newslettertest>
+                <class>GlyphWebCore_NewsletterTest_Helper</class>
+            </newslettertest>  
+        </helpers>
+        <blocks>
+            <newslettertest>
+                <class>GlyphWebCore_NewsletterTest_Block</class>
+            </newslettertest>
+        </blocks>         
+        <models>
+            <glyphwebcore_newslettertest>
+                <class>GlyphWebCore_NewsletterTest_Model</class>
+            </glyphwebcore_newslettertest>
+        </models>            
+    </global>
+    
+    <admin>
+	    <routers>
+            <newslettertest>
+                <use>admin</use>
+                <args>
+                    <module>GlyphWebCore_NewsletterTest</module>
+                    <frontName>newslettertest</frontName>
+                </args>
+            </newslettertest>          
+        </routers>
+    </admin>
+    
+    <adminhtml>
+        <menu>
+            <newsletter>
+                <children>
+                    <newslettertest_sendtest translate="title" module="newslettertest">
+                        <title>Send Test Newsletter</title>
+                        <action>newslettertest/adminhtml_sendtest</action>
+                    </newslettertest_sendtest>
+                </children>
+            </newsletter>
+        </menu>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <newsletter>
+                            <children>
+                                <newslettertest_sendtest>
+                                    <title>Send Test Newsletter</title>
+                                </newslettertest_sendtest>
+                            </children>
+                        </newsletter>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <glyphwebcore_newslettertest>
+                    <file>glyphwebcore/newslettertest.xml</file>
+                </glyphwebcore_newslettertest>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>

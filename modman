@@ -1,0 +1,4 @@
+app/code/community/GlyphWebCore/NewsletterTest                                  app/code/community/GlyphWebCore/NewsletterTest
+app/design/adminhtml/default/default/layout/glyphwebcore/newslettertest.xml     app/design/adminhtml/default/default/layout/glyphwebcore/newslettertest.xml
+app/design/adminhtml/default/default/template/glyphwebcore/newslettertest       app/design/adminhtml/default/default/template/glyphwebcore/newslettertest
+app/etc/modules/GlyphWebCore_NewsletterTest.xml                                 app/etc/modules/GlyphWebCore_NewsletterTest.xml
